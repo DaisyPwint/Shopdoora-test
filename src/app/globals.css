@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.container{
+  width: 1536px;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.swiper{
+  position: absolute;
+}
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-preView-container{
+  position: relative;
+  margin-left: 0;
+  margin-right: -60px;
+}
+
+.swiper-vape-container{
+  width: 70%;
+  height: 100%;
+  right: 0;
+  position:absolute!important;
+  z-index: 20;
+}
+
+.swiper-container .swiper-slide{
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  width: 37rem;
+  height: 42rem;
+  position: relative;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-preView-container .swiper-slide{
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  width: 80%;
+  height: 20rem;
+  margin-right: 10px;
+
+}
+
+.swiper-vape-container .swiper-slide{
+  text-align: center;
+  height: calc((100% - 30px) / 2) !important;
+}
+
+/* .swiper-preView-container .swiper-slide:nth-child(2n) {
+  width: 60%;
+}
+
+.swiper-preView-container .swiper-slide:nth-child(3n) {
+  width: 40%;
+} */
+
+.swiper-container .swiper-slide img{
+  display: block;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.swiper-preView-container .swiper-slide img{
+  display: block;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-container .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.swiper-container .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-container .swiper-button-prev,
+.swiper-container .swiper-button-next,
+.swiper-preView-container .swiper-button-next, 
+.swiper-vape-container .swiper-button-next{
+  position: absolute;
+  height: 120px;
+  width: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  transform: translateY(50%);
+  color: #fff;
+  border-radius: 8px;
+}
+
+.swiper-container .swiper-button-prev,.swiper-container .swiper-button-next{  
+  top: 30%;
+}
+
+.swiper-preView-container .swiper-button-next,.swiper-vape-container .swiper-button-next{  
+  top: 20%;
+}
+
+.swiper-preView-container .swiper-button-prev,.swiper-vape-container .swiper-button-prev{
+  display: none;
+}
+
+.swiper-container .swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 1.5rem;
+}
+
+.swiper-container .swiper-pagination {
+  position: relative;
+  width: 15rem !important;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background: #000;
+}
+
+.vape-container {
+  position: relative;
+  display: inline-block; /* Ensures the container only takes up the space of the image */
+}
+
+.vape-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 1536px){
+  .container{
+    width: 1366px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .container {
+    width: 1280px;
+  }
+  .swiper-vape-container{
+    top: 24px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 1024px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .swiper-preView-container{
+    margin-right: -40px;
+  }  
+  .swiper-preView-container .swiper-slide img{
+    width: 60%;
+  }
+  .swiper-vape-container{
+    top: 9px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 640px;
+  }
+  .swiper-preView-container .swiper-slide img{
+    width: 100%;
+  }
+  .swiper-vape-container .swiper-button-next{  
+    top: 7%;
+  }
+  .swiper-container .swiper-slide{
+    width: 37rem;
+    height: 28rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 475px;
+  }
+  .swiper-preView-container{
+    margin-right: -15px;
+  }  
+}
+@media (max-width: 475px) {
+  .container {
+    width: 380px;
+  }
+  .swiper-container .swiper-slide{
+    width: 37rem;
+    height: 20rem;
+  }
+}
