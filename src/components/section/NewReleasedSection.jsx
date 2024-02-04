@@ -107,7 +107,7 @@ const NewReleasedSection = () => {
                 <p className="md:text-lg sm:text-md text-sm text-slate-300">Find the best for your here!</p>
             </div>
             <Swiper
-                slidesPerView={1}
+                slidesPerView={2}
                 grid={{
                 rows: 1,
                 }}
@@ -223,7 +223,7 @@ const NewReleasedSection = () => {
                 <p className="md:text-lg sm:text-md text-sm text-slate-300">Variety of choices available</p>
             </div>
             <Swiper
-                slidesPerView={1}
+                slidesPerView={2}
                 grid={{
                 rows: 1,
                 }}
