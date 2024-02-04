@@ -29,16 +29,16 @@ const Footer = () => {
         <div className="flex flex-col gap-4 md:text-md text-sm">
           <h1 className="md:text-xl text-lg">Language</h1>
           <div className="flex flex-col gap-2">
-            <div>
-              <input type="radio" name="language" id="unicode" className="mr-3" />
+            <div className="flex gap-3 items-center">
+              <input type="radio" name="language" id="unicode"  />
               <label htmlFor="unicode">Myanmar (Unicode)</label>
             </div>
-            <div>
-              <input type="radio" name="language" id="zawgyi" className="mr-3" />
+            <div className="flex gap-3 items-center">
+              <input type="radio" name="language" id="zawgyi" />
               <label htmlFor="zawgyi">Myanmar (Zawgyi)</label>
             </div>
-            <div>
-              <input type="radio" name="language" id="english" defaultChecked className="mr-3" />
+            <div className="flex gap-3 items-center">
+              <input type="radio" name="language" id="english" defaultChecked />
               <label htmlFor="english">English</label>
             </div>
           </div>
