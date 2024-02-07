@@ -5,12 +5,12 @@ import { useState } from "react";
 const Navbar = () => {
   const [isMenuOpen,setIsMenuOpen] = useState(false);
 
-  const handleBestScroll = () => {
-    document.getElementById('best-deals').scrollIntoView({behavior: "smooth"})
+  const handleScroll = (elementId) => {
+    document.getElementById(elementId).scrollIntoView({behavior: "smooth"})
   }
 
-  const handleNewScroll = () => {
-    document.getElementById('new-released').scrollIntoView({behavior: "smooth"})
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   }
 
   return (
@@ -29,15 +29,15 @@ const Navbar = () => {
               isMenuOpen && (
                   <div className='fixed top-0 right-0 bg-slate-800/40 h-screen w-[200px] max-w-250 transform transition-transform ease-in-out duration-700 overflow-hidden z-20'>
                       <div
-                          className='absolute flex top-4 right-7 cursor-pointer ml-2 text-xl p-1 hover:bg-slate-300 hover:rounded-md' role='button' tabIndex="0" onKeyDown={() => setIsMenuOpen(false)} onClick={() => setIsMenuOpen(false)}
+                          className='absolute flex top-4 right-7 cursor-pointer ml-2 text-xl p-1 hover:bg-slate-300 hover:rounded-md' role='button' tabIndex="0" onKeyDown={closeMenu} onClick={closeMenu}
                           >
                           <span className="material-symbols-outlined">
                             close
                           </span>
                       </div>
                       <nav className='flex flex-col justify-center items-center gap-3 mt-[100%]'>
-                          <h1 className="md:text-2xl text-xl inline-block px-2 py-2 text-slate-50 transition-all duration-300  hover:duration-300 hover:bg-slate-50/65 hover:rounded-lg cursor-pointer" onClick={handleBestScroll}>Best Deals</h1>
-                          <h1 className="md:text-2xl text-xl inline-block px-2 py-2 text-slate-50 transition-all duration-300  hover:duration-300 hover:bg-slate-50/65 hover:rounded-lg cursor-pointer" onClick={handleNewScroll}>New Released</h1>
+                          <h1 className="md:text-2xl text-xl inline-block px-2 py-2 text-slate-50 transition-all duration-300  hover:duration-300 hover:bg-slate-50/65 hover:rounded-lg cursor-pointer" onClick={() => handleScroll("best-deals")}>Best Deals</h1>
+                          <h1 className="md:text-2xl text-xl inline-block px-2 py-2 text-slate-50 transition-all duration-300  hover:duration-300 hover:bg-slate-50/65 hover:rounded-lg cursor-pointer" onClick={() => handleScroll("new-released")}>New Released</h1>
                       </nav>
                   </div>
                 )

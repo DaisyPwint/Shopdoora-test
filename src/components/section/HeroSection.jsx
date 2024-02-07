@@ -11,9 +11,9 @@ import Image from 'next/image';
 import ViewButton from '../ViewButton';
 
 const images = [
-    'bg-4.avif',
-    'bg-5.avif',
-    'bg.avif',
+    'bg-1.avif',
+    'bg-2.avif',
+    'bg-3.avif',
   ];
 
 const HeroSection = () => {
